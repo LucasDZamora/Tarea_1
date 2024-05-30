@@ -9,7 +9,7 @@ WS : [ \t\r\n]+ -> skip ;
 /*var unsigned int : cant_plata*/
 /*var char : nombre*/
 /*var int : num*/
-IGUAL: '=';
+IGUAL: 'es lo mismo';
 VALOR: [0] | [1-9][0-9]* | '"' [a-zA-Z]* '"';
 ID: [a-z][a-zA-Z]+;
 VAR: TIPO ID IGUAL VALOR';';
@@ -19,11 +19,12 @@ VAR: TIPO ID IGUAL VALOR';';
 CONST: 'const ' VAR;
 
 /*==============3 TIPOS DE DATOS====================*/
-TIPO: 'int ' | 'char ' | 'unsigned int ';
+TIPO: 'int ' | 'char ' | 'float ';
 
 /*==============LECTURA E IMPRESION====================*/
-PRINTF: 'cuanta plata tiene?';
-SCANF: '(' VALOR %d', 'VALOR')'
+PRINTF: 'Te voy a decir una cosa:';
+SCANF: '(' VALOR %d', 'VALOR')';
+
 
 /* SWITCH*/
 /* IF : SI*/
