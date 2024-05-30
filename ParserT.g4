@@ -1,8 +1,9 @@
 grammar ParserT;
 import LexerT;
 
-program   : BEGIN statement+ END;
+program: BEGIN constante END;
 
-statement : print ;
+constante: CONST;
+/*statement: print;
 
-print     : PRINT (NUMBER);
+print: PRINT (TENGO DINERO);*/

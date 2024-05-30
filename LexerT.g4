@@ -2,13 +2,28 @@ lexer grammar LexerT;
 
 BEGIN: 'Esto es un asalto';
 END: 'noh vimoh';
-PRINT: 'cuanta plata tiene?';
 
-/* constante: tiempo_limite */
+WS : [ \t\r\n]+ -> skip ;
 
-/*var int : cant_plata*/
+/*==============VARIABLES====================*/
+/*var unsigned int : cant_plata*/
 /*var char : nombre*/
 /*var int : num*/
+IGUAL: '=';
+VALOR: [0] | [1-9][0-9]* | '"' [a-zA-Z]* '"';
+ID: [a-z][a-zA-Z]+;
+VAR: TIPO ID IGUAL VALOR';';
+
+/*==============CONSTANTES====================*/
+/* constante: tiempo_limite */
+CONST: 'const ' VAR;
+
+/*==============3 TIPOS DE DATOS====================*/
+TIPO: 'int ' | 'char ' | 'unsigned int ';
+
+/*==============LECTURA E IMPRESION====================*/
+PRINTF: 'cuanta plata tiene?';
+SCANF: '(' VALOR %d', 'VALOR')'
 
 /* SWITCH*/
 /* IF : SI*/
@@ -19,20 +34,30 @@ PRINT: 'cuanta plata tiene?';
 /* for (tiempo hasta tiempo_limite)*/
 
 /* Operaciones */
+PLUS: 'me gusta';
 /*  resta : no me gusta*/
+MINUS: 'no me gusta';
 /* division : No me puedo llevar todo lo voy a divir*/
+DIV: 'no me puedo llevar todo lo voy a divir';
 /* multiplicacion : Cuantos tiene de */
+MULT: 'cuantos tiene de';
+
 
 
 
 /* Operadores */
 /* && = y*/
 /* || = o*/
+AND: 'y';
+OR: 'o';
+
 /* if (sqrt(num))  */
+SQRT: 'sqrt';
+COS: 'cos';
+SIN: 'sin';
+TAN: 'tan';
 
 
 
 
-NUMBER : [0-9]+ ;
-WS : [ \t\r\n]+ -> skip ;
 
