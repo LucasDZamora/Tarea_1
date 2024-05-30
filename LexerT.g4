@@ -1,41 +1,72 @@
 lexer grammar LexerT;
 
+/*==============BASICOS====================*/
 BEGIN: 'Esto es un asalto';
 END: 'noh vimoh';
+ID: [a-z][a-zA-Z]*;
+NUMERO: [0] | [1-9][0-9]*;
+DECIMAL: [0-9]+'.'[0-9]+;
+CADENA: '"'(LETRA | ESPACIO)+'"';
+LETRA: [a-zA-Z];
+ESPACIO: ' ';
+ASSIGN: ' como ';
+SEMICOLON: ';';
+LEFT_PAREN: '(';
+RIGHT_PAREN: ')';
+LEFT_BRACE: ' entonces'; //{
+RIGHT_BRACE: ' hasta aqui nomas'; //}
 
-WS : [ \t\r\n]+ -> skip ;
+WS: [ \t\r\n]+ -> skip;
 
 /*==============VARIABLES====================*/
 /*var unsigned int : cant_plata*/
 /*var char : nombre*/
 /*var int : num*/
-IGUAL: 'es lo mismo';
-VALOR: [0] | [1-9][0-9]* | '"' [a-zA-Z]* '"';
-ID: [a-z][a-zA-Z]+;
-VAR: TIPO ID IGUAL VALOR';';
+VAR: 'voy a fichar ';
+CONVTIPO: INTEGER | CHAR | FLOAT;
+INTEGER: 'plata,';
+CHARACTER: 'garabatos,';
 
 /*==============CONSTANTES====================*/
 /* constante: tiempo_limite */
-CONST: 'const ' VAR;
+FINAL: 'voy a fichar como eterno ';
 
-/*==============3 TIPOS DE DATOS====================*/
-TIPO: 'int ' | 'char ' | 'float ';
+/*==============TIPOS DE DATOS====================*/
+NULL: ' cachai?';
+TIPO: INT | CHAR | FLOAT;
+INT: 'plata ';
+CHAR: 'garabatos ';
+FLOAT: 'plata partida ' | 'plata partida,';
 
 /*==============LECTURA E IMPRESION====================*/
-PRINTF: 'Te voy a decir una cosa:';
-SCANF: '(' VALOR %d', 'VALOR')';
+PRINT: 'Te voy a decir una cosa: ';
+/*READ: 'Soltame el dato:';  FALTA IMPREMENTARLO Y DECIDIR EL VALOR*/
 
-
-/* SWITCH*/
+/*==============CONDICIONAL====================*/
 /* IF : SI*/
 /* CONdiciones: se mueve*/
 /* acciones : la mato */
+/* SWITCH*/
+IF: 'Si';
+ELSE: 'Sino';
 
+/*==============ESTRUCTURAS REPETIDAS====================*/
 /* while(cant_plata > 0) */
+WHILE: 'Mientras';
 /* for (tiempo hasta tiempo_limite)*/
+FOR: 'patata';
 
-/* Operaciones */
-PLUS: 'me gusta';
+/*==============OPERADORES LOGICOS====================*/
+/* Operadores */
+/* && = y*/
+/* || = o*/
+AND: 'y';
+OR: 'o';
+MENOR_QUE: ' sea menor que ';
+MAYOR_QUE: ' sea mayor que ';
+
+/*==============OPERADORES MATEMATICOS====================*/
+PLUS: '+';
 /*  resta : no me gusta*/
 MINUS: 'no me gusta';
 /* division : No me puedo llevar todo lo voy a divir*/
@@ -43,22 +74,9 @@ DIV: 'no me puedo llevar todo lo voy a divir';
 /* multiplicacion : Cuantos tiene de */
 MULT: 'cuantos tiene de';
 
-
-
-
-/* Operadores */
-/* && = y*/
-/* || = o*/
-AND: 'y';
-OR: 'o';
-
+/*==============FUNCIONES MATEMATICAS====================*/
 /* if (sqrt(num))  */
 SQRT: 'sqrt';
 COS: 'cos';
 SIN: 'sin';
 TAN: 'tan';
-
-
-
-
-
