@@ -10,11 +10,11 @@ CADENA: '"'(LETRA | ESPACIO)+'"';
 LETRA: [a-zA-Z];
 ESPACIO: ' ';
 ASSIGN: ' como ';
-SEMICOLON: ';';
+SEMICOLON: 'wn';
 LEFT_PAREN: '(';
 RIGHT_PAREN: ')';
-LEFT_BRACE: ' entonces'; //{
-RIGHT_BRACE: ' hasta aqui nomas'; //}
+LEFT_BRACE: ' tonce'; //{
+RIGHT_BRACE: ' y era'; //}
 
 WS: [ \t\r\n]+ -> skip;
 
@@ -35,9 +35,9 @@ FINAL: 'voy a fichar como eterno ';
 /*==============TIPOS DE DATOS====================*/
 NULL: ' cachai?';
 TIPO: INT | CHAR | FLOAT;
-INT: 'plata ';
+INT: 'monea ';
 CHAR: 'garabatos ';
-FLOAT: 'plata partida ' | 'plata partida,';
+FLOAT: 'monea partida ' | 'monea partida,';
 
 /*==============LECTURA E IMPRESION====================*/
 PRINT: 'Te voy a decir una cosa: ';
