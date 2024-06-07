@@ -30,15 +30,15 @@ operation: operation TIMES operation # times
 atom: ('-' | '*')? NUMERO
      | ('-'|'*')? FLOAT;
 
-if_block: IF condition (ELIF condition)* (ELIF condition)?;
+if_block: IF condition (ELIF condition)* (ELSE else_block)?;
 
-else: LEFT_BRACE block RIGHT_BRACE
+else_block: LEFT_BRACE block RIGHT_BRACE
      | statement;
 
 condition: LPAR operation RPAR LEFT_BRACE block RIGHT_BRACE
          | LPAR operation RPAR statement;
 
-for: FOR LPAR ID ASSIGN atom SEMICOLON operation SEMICOLON ID (PLUS | MINUS | ASSIGN) operation? RPAR
+for: FOR LPAR declaration operation SEMICOLON ID (INCREMENT | DECREMENT | MINUS_ASSIGN | PLUS_ASSIGN | ASSIGN ) operation? RPAR
     (LEFT_BRACE block RIGHT_BRACE | statement);
 
 while: WHILE condition;
@@ -47,22 +47,21 @@ block: statement*;
 
 assignment: ID ASSIGN operation SEMICOLON;
 
-declaration: ('number' ID SEMICOLON 'number' assignment)
-('string' ID SEMICOLON 'string' assignment)
-('boolean' ID SEMICOLON 'boolean' assignment)
-('float' ID SEMICOLON 'float' assignment)
-;
+declaration: (TIPO assignment | TIPO ID SEMICOLON);
+
+
+
 
 const: CONST declaration;
 
 read: READ LPAR ID RPAR SEMICOLON;
 
-print: PRINT LPAR (STRING | ID)* RPAR;
+print: PRINT LPAR (STRING | ID )* RPAR;
 
 /*Crear varible*/
 dVar: VAR ID ASSIGN CONVTIPO NULL SEMICOLON;
 /*Crear varible constante*/
-dConst: FINAL TIPO ID SEMICOLON;
+dConst: CONST TIPO ID SEMICOLON;
 /*Crear variable con valor*/
 
 /*Asignar valor a variable*/
