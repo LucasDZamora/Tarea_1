@@ -15,8 +15,15 @@ LPAR: '(';
 RPAR: ')';
 LEFT_BRACE: ' tonce'; //{
 RIGHT_BRACE: ' y era'; //}
+GTHAN: 'eh mayor';
+LTHAN: 'eh menor';
+GETHAN: 'eh mayor o igual';
+LETHAN: 'eh menor o igual';
+EQUAL: 'eh igual';
+NQUAL: 'no eh igual';
 
 WS: [ \t\r\n]+ -> skip;
+
 
 /*==============VARIABLES====================*/
 /*var unsigned int : cant_plata*/
@@ -29,8 +36,9 @@ INTEGER: 'plata,';
 CHARACTER: 'garabatos,';
 
 /*==============CONSTANTES====================*/
+
 /*constante: ´antes que lleguen los pacos´;*/
-FINAL: 'voy a fichar como eterno ';
+CONST: 'voy a fichar como eterno ';
 
 /*==============TIPOS DE DATOS====================*/
 NULL: ' cachai?';
@@ -52,6 +60,7 @@ PRINT: 'Te voy a decir una cosa: ';
 /* SWITCH*/
 IF: 'Si';
 ELSE: 'Sino';
+ELIF: 'ysi';
 
 /*==============ESTRUCTURAS REPETIDAS====================*/
 /* while(cant_plata > 0) */
@@ -88,7 +97,6 @@ TIMES: 'cuantos tiene de';
 SQRT: 'sqrt';
 /* mientras (tiempo_disp sea menor que sqrt(antes que lleguen los pacos))*/
 POW: 'aumenta';
-
 SIN: 'sin';
 COS: 'cos';
 

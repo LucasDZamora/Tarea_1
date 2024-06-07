@@ -25,22 +25,21 @@ operation: operation TIMES operation # times
 | ABS LPAR operation RPAR # abs
 | ID # id
 | atom # atomic
-| LPAR operation RPAR # parens
-;
+| LPAR operation RPAR # parens;
 
 atom: ('-' | '*')? NUMBER
 | ('-'|'*')? FLOAT;
 
 if_block: IF condition (ELIF condition)* (ELIF condition)?;
 
-else: LBRACE block RBRACE
+else: LEFT_BRACE block RIGHT_BRACE
 |statement;
 
-condition: LPAR operation RPAR LBRACE operation RBRACE
+condition: LPAR operation RPAR LEFT_BRACE operation LEFT_BRACE
 | LPAR operation RPAR statement;
 
 for: FOR LPAR ID '=' atom SEMICOLON operation SEMICOLON ID ('++' | '--' '+='| '-=' | '=') operation? RPAR
- (LBRACE block RBRACE |statement);
+ (LEFT_BRACE block LEFT_BRACE |statement);
 
 while: WHILE condition;
 
