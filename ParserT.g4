@@ -27,7 +27,7 @@ operation: operation TIMES operation # times
 | atom # atomic
 | LPAR operation RPAR # parens;
 
-atom: ('-' | '*')? NUMBER
+atom: ('-' | '*')? NUMERO
 | ('-'|'*')? FLOAT;
 
 if_block: IF condition (ELIF condition)* (ELIF condition)?;
@@ -67,7 +67,7 @@ dConst: FINAL TIPO ID SEMICOLON;
 assignment: TIPO ID ASSIGN NUMERO SEMICOLON;
 /*Asignar valor a variable*/
 valorVar: ID ASSIGN term SEMICOLON;
-assign: ID '=' (operation |ID | STRING | BOOLEAN) SEMICOLON;
+assign: ID EQUAL (operation |ID | STRING | BOOLEAN) SEMICOLON;
 expr: term MAYOR_QUE term | term MENOR_QUE term; /*¿AGREGAR MAS OPCIONES?*/
 term: factor | term PLUS term | term MINUS term | term DIV term | term MULT term;
 factor: NUMERO | DECIMAL | ID | mathFunction; /*¿AGREGAR PARA COMPARAR CADENAS?*/

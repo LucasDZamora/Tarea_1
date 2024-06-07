@@ -8,7 +8,7 @@ END: 'noh vimoh';
 
 ESPACIO: ' ';
 ASSIGN: ' como ';
-SEMICOLON: 'wn';
+SEMICOLON: 'wn ';
 
 LPAR: '(';
 RPAR: ')';
