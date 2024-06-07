@@ -2,50 +2,50 @@ grammar ParserT;
 import LexerT;
 
 program: BEGIN statement* END;
+
 statement : assignment
-| operation
-| if_block
-| while
-| declaration
-| const
-| for
-| read
-| print
-;
+          | operation
+          | if_block
+          | while
+          | declaration
+          | const
+          | for
+          | read
+          | print;
 
 operation: operation TIMES operation # times
-| operation DIV operation #div
-| operation PLUS operation # plus
-| operation MINUS # minus
-| operation (GTHAN | LTHAN | GETHAN | LETHAN) operation # trueValue
-| operation (EQUAL | NQUAL ) operation # comp
-| operation AND operation # and
-| operation OR operation # or
-|( COS | SEN | SQRT ) LPAR operation RPAR # matFun
-| ABS LPAR operation RPAR # abs
-| ID # id
-| atom # atomic
-| LPAR operation RPAR # parens;
+          | operation DIV operation # div
+          | operation PLUS operation # plus
+          | operation MINUS operation # minus
+          | operation (GTHAN | LTHAN | GETHAN | LETHAN) operation # trueValue
+          | operation (EQUAL | NQUAL) operation # comp
+          | operation AND operation # and
+          | operation OR operation # or
+          | (COS | SEN | SQRT) LPAR operation RPAR # matFun
+          | ABS LPAR operation RPAR # abs
+          | ID # id
+          | atom # atomic
+          | LPAR operation RPAR # parens;
 
 atom: ('-' | '*')? NUMERO
-| ('-'|'*')? FLOAT;
+     | ('-'|'*')? FLOAT;
 
 if_block: IF condition (ELIF condition)* (ELIF condition)?;
 
 else: LEFT_BRACE block RIGHT_BRACE
-|statement;
+     | statement;
 
-condition: LPAR operation RPAR LEFT_BRACE operation LEFT_BRACE
-| LPAR operation RPAR statement;
+condition: LPAR operation RPAR LEFT_BRACE block RIGHT_BRACE
+         | LPAR operation RPAR statement;
 
-for: FOR LPAR ID '=' atom SEMICOLON operation SEMICOLON ID ('++' | '--' '+='| '-=' | '=') operation? RPAR
- (LEFT_BRACE block LEFT_BRACE |statement);
+for: FOR LPAR ID ASSIGN atom SEMICOLON operation SEMICOLON ID (PLUS | MINUS | ASSIGN) operation? RPAR
+    (LEFT_BRACE block RIGHT_BRACE | statement);
 
 while: WHILE condition;
 
 block: statement*;
 
-
+assignment: ID ASSIGN operation SEMICOLON;
 
 declaration: ('number' ID SEMICOLON 'number' assignment)
 ('string' ID SEMICOLON 'string' assignment)
@@ -53,18 +53,18 @@ declaration: ('number' ID SEMICOLON 'number' assignment)
 ('float' ID SEMICOLON 'float' assignment)
 ;
 
-
 const: CONST declaration;
+
 read: READ LPAR ID RPAR SEMICOLON;
 
-print: PRINT LPAR (STRING|ID)* RPAR;
+print: PRINT LPAR (STRING | ID)* RPAR;
 
 /*Crear varible*/
 dVar: VAR ID ASSIGN CONVTIPO NULL SEMICOLON;
 /*Crear varible constante*/
 dConst: FINAL TIPO ID SEMICOLON;
 /*Crear variable con valor*/
-assignment: TIPO ID ASSIGN NUMERO SEMICOLON;
+
 /*Asignar valor a variable*/
 valorVar: ID ASSIGN term SEMICOLON;
 assign: ID EQUAL (operation |ID | STRING | BOOLEAN) SEMICOLON;

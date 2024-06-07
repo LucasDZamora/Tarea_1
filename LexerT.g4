@@ -84,7 +84,7 @@ IGUAL: 'es lo mismo';
 
 /*==============OPERADORES MATEMATICOS====================*/
 /* suma: queda pa mi*/
-PLUS: 'queda pa mi';
+PLUS: 'sumale';
 /*  resta : no me gusta*/
 MINUS: 'no me gusta';
 /* division : No me puedo llevar todo lo voy a dividir*/
