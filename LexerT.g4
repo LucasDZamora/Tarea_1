@@ -3,14 +3,13 @@ lexer grammar LexerT;
 /*==============BASICOS====================*/
 BEGIN: 'Esto es un asalto';
 END: 'noh vimoh';
-ID: [a-z][a-zA-Z]*;
-NUMERO: [0] | [1-9][0-9]*;
-DECIMAL: [0-9]+'.'[0-9]+;
-CADENA: '"'(LETRA | ESPACIO)+'"';
-LETRA: [a-zA-Z];
+
+
+
 ESPACIO: ' ';
 ASSIGN: ' como ';
 SEMICOLON: 'wn';
+
 LPAR: '(';
 RPAR: ')';
 LEFT_BRACE: ' tonce'; //{
@@ -50,7 +49,8 @@ FLOAT: 'monea partida ' | 'monea partida,';
 /*==============LECTURA E IMPRESION====================*/
 PRINT: 'Te voy a decir una cosa: ';
 /*PRINT: ´cuanto tiempo tenemos? : */
-/*READ: tiempo_disp*/
+READ: 'Aaa';
+
 /*READ: 'Soltame el dato:';  FALTA IMPREMENTARLO Y DECIDIR EL VALOR*/
 
 /*==============CONDICIONAL====================*/
@@ -100,3 +100,8 @@ POW: 'aumenta';
 SIN: 'sin';
 COS: 'cos';
 
+NUMERO: [0] | [1-9][0-9]*;
+DECIMAL: [0-9]+'.'[0-9]+;
+CADENA: '"'(LETRA | ESPACIO)+'"';
+ID: [a-z][a-zA-Z]*;
+LETRA: [a-zA-Z];
