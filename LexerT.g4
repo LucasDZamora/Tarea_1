@@ -11,8 +11,8 @@ LETRA: [a-zA-Z];
 ESPACIO: ' ';
 ASSIGN: ' como ';
 SEMICOLON: 'wn';
-LEFT_PAREN: '(';
-RIGHT_PAREN: ')';
+LPAR: '(';
+RPAR: ')';
 LEFT_BRACE: ' tonce'; //{
 RIGHT_BRACE: ' y era'; //}
 
@@ -81,7 +81,7 @@ MINUS: 'no me gusta';
 /* division : No me puedo llevar todo lo voy a dividir*/
 DIV: 'no me puedo llevar todo lo voy a dividir';
 /* multiplicacion : Cuantos tiene de */
-MULT: 'cuantos tiene de';
+TIMES: 'cuantos tiene de';
 
 
 /*==============FUNCIONES MATEMATICAS====================*/
