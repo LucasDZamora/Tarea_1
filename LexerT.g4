@@ -5,7 +5,7 @@ BEGIN: 'Esto es un asalto';
 END: 'noh vimoh';
 
 ASSIGN: ' como ';
-SEMICOLON: 'wn ';
+SEMICOLON: ' wn ';
 
 LPAR: '(';
 RPAR: ')';
@@ -30,12 +30,11 @@ VAR: 'voy a fichar ';
 
 /*==============CONSTANTES====================*/
 
-/*constante: ´antes que lleguen los pacos´;*/
 CONST: 'voy a fichar como eterno ';
 
 /*==============TIPOS DE DATOS====================*/
 NULL: ' cachai?';
-TIPO: INT | CHAR | FLOAT;
+TIPO: INT | CHAR | FLOAT | VAR;
 INT: 'monea ';
 CHAR: 'garabatos ';
 FLOAT: 'monea partida ';
@@ -43,9 +42,8 @@ FLOAT: 'monea partida ';
 /*==============LECTURA E IMPRESION====================*/
 PRINT: 'Te voy a decir una cosa: ';
 /*PRINT: ´cuanto tiempo tenemos? : */
-READ: 'Aaa';
+READ: 'Cachar la vola: ';
 
-/*READ: 'Soltame el dato:';  FALTA IMPREMENTARLO Y DECIDIR EL VALOR*/
 
 /*==============CONDICIONAL====================*/
 /* IF : SI*/
@@ -67,11 +65,8 @@ FOR: 'pa';
 /* && = y*/
 /* || = o*/
 /* (==) = es lo mismo que x 2*/
-AND: 'y';
-OR: 'o';
-MENOR_QUE: ' sea menor que ';
-MAYOR_QUE: ' sea mayor que ';
-IGUAL: 'es lo mismo';
+AND: ' y la wea ';
+OR: ' o la wea ';
 
 
 
@@ -80,10 +75,10 @@ IGUAL: 'es lo mismo';
 /* suma: queda pa mi*/
 PLUS: ' sumale '; //Esto es +
 PLUS_ASSIGN: ' subele con '; //Esto es +=
-INCREMENT: ' sube uno po '; //Esto es el ++
+INCREMENT: ' sube uno po'; //Esto es el ++
 /*  resta : no me gusta*/
 MINUS: ' no me gusta '; //Esto es -
-DECREMENT: ' redule po '; //Esto es el --
+DECREMENT: ' redule po'; //Esto es el --
 MINUS_ASSIGN: ' reducelo con '; //Esto es -=
 /* division : No me puedo llevar todo lo voy a dividir*/
 DIV: ' no me puedo llevar todo lo voy a dividir ';
@@ -97,6 +92,7 @@ SQRT: 'sqrt';
 POW: 'aumenta';
 SIN: 'sin';
 COS: 'cos';
+ABS: 'abs';
 
 NUMERO: [0] | [1-9][0-9]*;
 DECIMAL: [0-9]+'.'[0-9]+;

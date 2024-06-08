@@ -1,6 +1,20 @@
 Esto es un asalto
-pa(monea i como 20wn i eh menor 10wn i sube uno po ) tonce
+
+voy a fichar como eterno monea partida pi como 3.14 wn
+
+monea dinero como 0 wn
+garabatos insulto wn
+insulto como "eres feo" wn
+
+Cachar la vola: (dinero) wn
+
+Mientras(dinero eh mayor 0) tonce
+dinero reducele uno po y era
+
+pa(monea i como 20 wn i eh menor 10 wn i sube uno po) tonce
 Si(i eh igual 11) tonce
-Te voy a decir una cosa: ("LUCAS CHUPALO") y era
-Sino Te voy a decir una cosa: (i) y era
+Te voy a decir una cosa: (insulto) y era
+ysi(i eh igual 7) tonce
+Te voy a decir una cosa: ("isaac es de perkines") y era
+Sino Te voy a decir una cosa: (i cuantos tiene de pi) y era
 noh vimoh
