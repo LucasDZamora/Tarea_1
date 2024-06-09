@@ -35,9 +35,9 @@ CONST: 'voy a ficharte como eterno loh ';
 /*==============TIPOS DE DATOS====================*/
 NULL: ' cachai?';
 TIPO: INT | CHAR | FLOAT | VAR;
-INT: 'billete del ';
+INT: 'billete ';
 CHAR: 'loh garabatos como ';
-FLOAT: 'monea del ';
+FLOAT: 'monea ';
 
 /*==============LECTURA E IMPRESION====================*/
 PRINT: 'Te voy a decir q: ';
