@@ -5,18 +5,18 @@ BEGIN: 'Esto es un asalto';
 END: 'noh vimoh';
 
 ASSIGN: ' como ';
-SEMICOLON: ' wn ';
+SEMICOLON: ' wn';
 
 LPAR: '(';
 RPAR: ')';
 LEFT_BRACE: ' tonce'; //{
 RIGHT_BRACE: ' y era'; //}
-GTHAN: ' eh mayor ';
-LTHAN: ' eh menor ';
-GETHAN: ' eh mayor o igual ';
-LETHAN: ' eh menor o igual ';
-EQUAL: ' eh igual ';
-NQUAL: ' no eh igual ';
+GTHAN: ' eh mayor q ';
+LTHAN: ' eh menor q ';
+GETHAN: ' eh mayor o igual q ';
+LETHAN: ' eh menor o igual q ';
+EQUAL: ' eh igual q ';
+NQUAL: ' no eh igual q ';
 
 WS: [ \t\r\n]+ -> skip;
 
@@ -30,19 +30,19 @@ VAR: 'voy a fichar ';
 
 /*==============CONSTANTES====================*/
 
-CONST: 'voy a fichar como eterno ';
+CONST: 'voy a ficharte como eterno loh ';
 
 /*==============TIPOS DE DATOS====================*/
 NULL: ' cachai?';
 TIPO: INT | CHAR | FLOAT | VAR;
-INT: 'monea ';
-CHAR: 'garabatos ';
-FLOAT: 'monea partida ';
+INT: 'billete del ';
+CHAR: 'loh garabatos como ';
+FLOAT: 'monea del ';
 
 /*==============LECTURA E IMPRESION====================*/
-PRINT: 'Te voy a decir una cosa: ';
+PRINT: 'Te voy a decir q: ';
 /*PRINT: ´cuanto tiempo tenemos? : */
-READ: 'Cachar la vola: ';
+READ: 'Cacha la vola: ';
 
 
 /*==============CONDICIONAL====================*/
@@ -78,8 +78,8 @@ PLUS_ASSIGN: ' subele con '; //Esto es +=
 INCREMENT: ' sube uno po'; //Esto es el ++
 /*  resta : no me gusta*/
 MINUS: ' no me gusta '; //Esto es -
-DECREMENT: ' redule po'; //Esto es el --
-MINUS_ASSIGN: ' reducelo con '; //Esto es -=
+DECREMENT: ' robate po'; //Esto es el --
+MINUS_ASSIGN: ' robate po '; //Esto es -=
 /* division : No me puedo llevar todo lo voy a dividir*/
 DIV: ' no me puedo llevar todo lo voy a dividir ';
 /* multiplicacion : Cuantos tiene de */

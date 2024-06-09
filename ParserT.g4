@@ -49,9 +49,6 @@ assignment: ID ASSIGN (operation | STRING | INCREMENT | DECREMENT | MINUS_ASSIGN
 
 declaration: (TIPO assignment | TIPO ID SEMICOLON);
 
-
-
-
 const: CONST TIPO assignment;
 
 read: READ LPAR ID RPAR SEMICOLON;
