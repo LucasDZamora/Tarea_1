@@ -21,11 +21,11 @@ operation: operation TIMES operation # times
           | operation (EQUAL | NQUAL) operation # comp
           | operation AND operation # and
           | operation OR operation # or
-          | (COS | SIN | SQRT) LPAR operation RPAR # matFun
-          | ABS LPAR operation RPAR # abs
+          | (COS | SIN | SQRT) LEFT_BRACE operation RIGHT_BRACE # matFun
+          | ABS LEFT_BRACE operation RIGHT_BRACE # abs
           | ID # id
           | atom # atomic
-          | LPAR operation RPAR # parens;
+          | LEFT_BRACE operation RIGHT_BRACE # parens;
 
 atom: ('-' | '*')? NUMERO
      | ('-'|'*')? DECIMAL;
@@ -35,10 +35,10 @@ if_block: IF condition (ELIF condition)* (ELSE else_block)?;
 else_block: LEFT_BRACE block RIGHT_BRACE
      | statement;
 
-condition: LPAR operation RPAR LEFT_BRACE block RIGHT_BRACE
-         | LPAR operation RPAR statement;
+condition: LEFT_BRACE operation RIGHT_BRACE LEFT_BRACE block RIGHT_BRACE
+         | LEFT_BRACE operation RIGHT_BRACE statement;
 
-for: FOR LPAR declaration operation SEMICOLON ID (INCREMENT | DECREMENT | MINUS_ASSIGN | PLUS_ASSIGN | ASSIGN ) operation? RPAR
+for: FOR LEFT_BRACE declaration operation SEMICOLON ID (INCREMENT | DECREMENT | MINUS_ASSIGN | PLUS_ASSIGN | ASSIGN ) operation? RIGHT_BRACE
     (LEFT_BRACE block RIGHT_BRACE | statement);
 
 while: WHILE condition;
@@ -51,9 +51,9 @@ declaration: (TIPO assignment | TIPO ID SEMICOLON);
 
 const: CONST TIPO assignment;
 
-read: READ LPAR ID RPAR SEMICOLON;
+read: READ LEFT_BRACE ID RIGHT_BRACE SEMICOLON;
 
-print: PRINT LPAR (STRING | operation )* RPAR;
+print: PRINT LEFT_BRACE (STRING | operation )* RIGHT_BRACE;
 
 
 
