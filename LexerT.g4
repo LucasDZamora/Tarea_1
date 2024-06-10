@@ -3,10 +3,8 @@ lexer grammar LexerT;
 /*==============BASICOS====================*/
 BEGIN: 'Esto es un asalto';
 END: 'noh vimoh';
-
 ASSIGN: ' como ';
 SEMICOLON: ' wn';
-
 LPAR: '(';
 RPAR: ')';
 LEFT_BRACE: ' tonce'; //{
@@ -20,16 +18,10 @@ NQUAL: ' no eh igual q ';
 
 WS: [ \t\r\n]+ -> skip;
 
-
 /*==============VARIABLES====================*/
-/*var unsigned int : cant_plata*/
-/*var char : nombre*/
-/*var int : num*/
-/*var float : tiempo_disp*/
 VAR: 'voy a fichar ';
 
 /*==============CONSTANTES====================*/
-
 CONST: 'voy a ficharte como eterno loh ';
 
 /*==============TIPOS DE DATOS====================*/
@@ -41,59 +33,42 @@ FLOAT: 'monea ';
 
 /*==============LECTURA E IMPRESION====================*/
 PRINT: 'Te voy a decir q: ';
-/*PRINT: ´cuanto tiempo tenemos? : */
 READ: 'Cacha la vola: ';
 
-
 /*==============CONDICIONAL====================*/
-/* IF : SI*/
-/* CONdiciones: se mueve*/
-/* acciones : la mato */
-/* SWITCH*/
 IF: 'Si';
 ELSE: 'Sino';
 ELIF: 'ysi';
 
 /*==============ESTRUCTURAS REPETIDAS====================*/
-/* while(cant_plata > 0) */
-WHILE: 'Mientras';
-/* pa (tiempo hasta antes que lleguen los pacos)*/
+WHILE: 'mientra´ q weamo';
 FOR: 'pa';
 
 /*==============OPERADORES LOGICOS====================*/
-/* Operadores */
-/* && = y*/
-/* || = o*/
-/* (==) = es lo mismo que x 2*/
 AND: ' y la wea ';
 OR: ' o la wea ';
-
-
-
 
 /*==============OPERADORES MATEMATICOS====================*/
 /* suma: queda pa mi*/
 PLUS: ' sumale '; //Esto es +
 PLUS_ASSIGN: ' subele con '; //Esto es +=
+EQUAL_ASSIGN: 'es lo mismo q x 2'; //Esto es ==
 INCREMENT: ' sube uno po'; //Esto es el ++
 /*  resta : no me gusta*/
 MINUS: ' no me gusta '; //Esto es -
 DECREMENT: ' robate po'; //Esto es el --
 MINUS_ASSIGN: ' robate po '; //Esto es -=
-/* division : No me puedo llevar todo lo voy a dividir*/
-DIV: ' no me puedo llevar todo lo voy a dividir ';
-/* multiplicacion : Cuantos tiene de */
-TIMES: ' cuantos tiene de ';
-
+DIV: ' no me puedo llevar todo lo voy a dividir '; // división
+TIMES: ' cuantos tiene de '; //multiplicar
 
 /*==============FUNCIONES MATEMATICAS====================*/
 SQRT: 'sqrt';
-/* mientras (tiempo_disp sea menor que sqrt(antes que lleguen los pacos))*/
 POW: 'aumenta';
 SIN: 'sin';
 COS: 'cos';
 ABS: 'abs';
 
+/*==============GRAMÁTICA====================*/
 NUMERO: [0] | [1-9][0-9]*;
 DECIMAL: [0-9]+'.'[0-9]+;
 STRING: '"'(LETRA | ESPACIO)+'"';

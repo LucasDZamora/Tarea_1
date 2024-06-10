@@ -1,20 +1,20 @@
 Esto es un asalto
+voy a ficharte como eterno loh billete luka como 2340 wn
 
-voy a fichar como eterno monea partida pi como 3.14 wn
+monea dinero como 1.300 wn
+loh garabatos como insulto wn
+insulto como "fleto" wn
 
-monea dinero como 0 wn
-garabatos insulto wn
-insulto como "eres feo" wn
+Cacha la vola: (dinero) wn
 
-Cachar la vola: (dinero) wn
+mientra´ q weamo (dinero eh mayor q 1000) tonce
+dinero robate uno po y era
 
-Mientras(dinero eh mayor 0) tonce
-dinero reducele uno po y era
+pa(billete mio como 20 wn mio eh menor q 10 wn mio sube uno po) tonce
+Si(mio eh igual q 11) tonce
+Te voy a decir q: ("chupalo tonce") y era
+ysi(mio eh igual q 7) tonce
+Te voy a decir q: ("maricon") y era
+Sino Te voy a decir q: (mio cuantos tiene de luka) y era
 
-pa(monea i como 20 wn i eh menor 10 wn i sube uno po) tonce
-Si(i eh igual 11) tonce
-Te voy a decir una cosa: (insulto) y era
-ysi(i eh igual 7) tonce
-Te voy a decir una cosa: ("isaac es de perkines") y era
-Sino Te voy a decir una cosa: (i cuantos tiene de pi) y era
 noh vimoh
