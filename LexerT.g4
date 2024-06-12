@@ -27,9 +27,9 @@ CONST: 'voy a ficharte como eterno loh ';
 /*==============TIPOS DE DATOS====================*/
 NULL: ' cachai?';
 TIPO: INT | CHAR | FLOAT | VAR;
-INT: 'billete ';
+INT: 'monea ';
 CHAR: 'loh garabatos como ';
-FLOAT: 'monea ';
+FLOAT: 'billete ';
 
 /*==============LECTURA E IMPRESION====================*/
 PRINT: 'Te voy a decir q: ';
@@ -41,7 +41,7 @@ ELSE: 'Sino';
 ELIF: 'ysi';
 
 /*==============ESTRUCTURAS REPETIDAS====================*/
-WHILE: 'mientra´ q weamo';
+WHILE: 'mientra q weamo';
 FOR: 'pa';
 
 /*==============OPERADORES LOGICOS====================*/
@@ -54,7 +54,6 @@ PLUS: ' sumale '; //Esto es +
 PLUS_ASSIGN: ' subele con '; //Esto es +=
 EQUAL_ASSIGN: 'es lo mismo q x 2'; //Esto es ==
 INCREMENT: ' sube uno po'; //Esto es el ++
-/*  resta : no me gusta*/
 MINUS: ' no me gusta '; //Esto es -
 DECREMENT: ' robate po'; //Esto es el --
 MINUS_ASSIGN: ' robate po '; //Esto es -=
@@ -62,10 +61,10 @@ DIV: ' no me puedo llevar todo lo voy a dividir '; // división
 TIMES: ' cuantos tiene de '; //multiplicar
 
 /*==============FUNCIONES MATEMATICAS====================*/
-SQRT: 'sqrt';
+SQRT: 'scort';
 POW: 'aumenta';
-SIN: 'sin';
-COS: 'cos';
+SIN: 'senos';
+COS: 'coito';
 ABS: 'abs';
 
 /*==============GRAMÁTICA====================*/

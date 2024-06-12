@@ -43,9 +43,10 @@ for: FOR LPAR declaration operation SEMICOLON ID (INCREMENT | DECREMENT | MINUS_
 
 while: WHILE condition;
 
+assignment: ID ASSIGN (operation | STRING | INCREMENT | DECREMENT | MINUS_ASSIGN | PLUS_ASSIGN | ASSIGN) SEMICOLON;
+
 block: statement*;
 
-assignment: ID ASSIGN (operation | STRING | INCREMENT | DECREMENT | MINUS_ASSIGN | PLUS_ASSIGN | ASSIGN) SEMICOLON;
 
 declaration: (TIPO assignment | TIPO ID SEMICOLON);
 
@@ -53,7 +54,8 @@ const: CONST TIPO assignment;
 
 read: READ LPAR ID RPAR SEMICOLON;
 
-print: PRINT LPAR (STRING | operation )* RPAR;
+print: PRINT LPAR (STRING | operation )* RPAR SEMICOLON;
+
 
 
 
