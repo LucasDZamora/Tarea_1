@@ -41,7 +41,7 @@ ELSE: 'Sino';
 ELIF: 'ysi';
 
 /*==============ESTRUCTURAS REPETIDAS====================*/
-WHILE: 'mientra q weamo';
+WHILE: 'mientra´ q weamo';
 FOR: 'pa';
 
 /*==============OPERADORES LOGICOS====================*/
