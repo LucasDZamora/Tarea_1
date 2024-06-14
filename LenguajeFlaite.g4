@@ -1,4 +1,4 @@
-lexer grammar LexerT;
+lexer grammar LenguajeFlaite;
 
 /*==============BASICOS====================*/
 BEGIN: 'Esto es un asalto';
