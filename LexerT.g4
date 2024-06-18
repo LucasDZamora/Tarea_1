@@ -5,15 +5,15 @@ BEGIN: 'Esto es un asalto'; // begin
 END: 'noh vimoh'; // end
 ASSIGN: ' como '; // =
 SEMICOLON: ' wn'; // ;
-LPAR: '('; // (
-RPAR: ')'; // )
-LEFT_BRACE: ' tonce'; // {
-RIGHT_BRACE: ' y era'; // }
-COMPARAR: GTHAN | LTHAN | GETHAN | LETHAN; // Seleccionar como comparar (si son mayores, menores, mayor o igual, menor o igual)
-GTHAN: ' eh mayor q '; // >
-LTHAN: ' eh menor q '; // <
-GETHAN: ' eh mayor o igual q '; // >=
-LETHAN: ' eh menor o igual q '; // <=
+PARENTESIS_IZQ: '('; // (
+PARENTESIS_DER: ')'; // )
+LLAVE_IZQ: ' tonce'; // {
+LLAVE_DER: ' y era'; // }
+COMPARAR: MAYOR_QUE | MENOR_QUE | MAYOR_O_IGUAL | MENOR_O_IGUAL; // Seleccionar como comparar (si son mayores, menores, mayor o igual, menor o igual)
+MAYOR_QUE: ' eh mayor q '; // >
+MENOR_QUE: ' eh menor q '; // <
+MAYOR_O_IGUAL: ' eh mayor o igual q '; // >=
+MENOR_O_IGUAL: ' eh menor o igual q '; // <=
 COMP: EQUAL | NQUAL; // Seleccionar como comparar (si son iguales o distintos)
 EQUAL: ' eh igual q '; // ==
 NQUAL: ' no eh igual q '; // !=

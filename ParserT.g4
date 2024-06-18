@@ -19,12 +19,12 @@ operation: operation OPERADOR_MATH operation # operation_math // Multiplicar, di
           | operation COMPARAR operation # comparar // > , < , >=, <= ( eh mayor q ,  eh menor q ,  eh mayor o igual q ,  eh menor o igual q )
           | operation COMP operation # comp // == , != ( eh igual q ,  no eh igual q )
           | operation OP_LOGICO operation # and // and, or (y la wea, o la wea)
-          | OP_MATH LPAR /* ( */ operation RPAR /* ) */ # matFun // coseno, seno, raiz (coito,seno,scrot)
-          | ABS /*abs*/ LPAR /* ( */ operation RPAR /* ) */ # valorAbsoluto
-          | POW /*aumenta*/ LPAR /* ( */ ID ',' NUMERO RPAR /* ) */ # pow
+          | OP_MATH PARENTESIS_IZQ /* ( */ operation PARENTESIS_DER /* ) */ # matFun // coseno, seno, raiz (coito,seno,scrot)
+          | ABS /*abs*/ PARENTESIS_IZQ /* ( */ operation PARENTESIS_DER /* ) */ # valorAbsoluto
+          | POW /*aumenta*/ PARENTESIS_IZQ /* ( */ ID ',' NUMERO PARENTESIS_DER /* ) */ # pow
           | ID # id //nombre de la variable formada con letras [a-z][a-zA-Z]*
           | NUMERO # numero // declarar numeros enteros o decimales, positivos o negativos
-          | LPAR /* ( */ operation RPAR /* ) */ # parentesis;
+          | PARENTESIS_IZQ /* ( */ operation PARENTESIS_DER /* ) */ # parentesis;
 
 
 if: IF /*Si*/ condition elif else;
@@ -33,14 +33,14 @@ elif: (ELIF/*ysi*/ condition)*;
 
 else: (ELSE /*Sino*/ else_block)?;
 
-else_block: LEFT_BRACE statement* RIGHT_BRACE
+else_block: LLAVE_IZQ statement* LLAVE_DER
      | statement; // Varios statement o solo uno
 
-condition: LPAR operation RPAR (LEFT_BRACE statement* RIGHT_BRACE | statement); //Condición, varios statement o solo uno
+condition: PARENTESIS_IZQ operation PARENTESIS_DER (LLAVE_IZQ statement* LLAVE_DER | statement); //Condición, varios statement o solo uno
 
-for: FOR /*pa*/ LPAR declaration operation SEMICOLON ID (INCREMENT/* sube uno po*/| DECREMENT/* robate po*/
-     | MINUS_ASSIGN/* robate po */ | PLUS_ASSIGN/* subele con */ | ASSIGN/* como */ ) operation? RPAR/* ) */
-    (LEFT_BRACE statement* RIGHT_BRACE| statement);
+for: FOR /*pa*/ PARENTESIS_IZQ declaration operation SEMICOLON ID (INCREMENT/* sube uno po*/| DECREMENT/* robate po*/
+     | MINUS_ASSIGN/* robate po */ | PLUS_ASSIGN/* subele con */ | ASSIGN/* como */ ) operation? PARENTESIS_DER
+    (LLAVE_IZQ statement* LLAVE_DER| statement);
 
 while: WHILE /*mientra q weamo*/ condition;
 
@@ -48,9 +48,9 @@ declaration: (TIPO assignment | TIPO ID SEMICOLON);
 
 const: CONST/*voy a ficharte como eterno loh */ TIPO/* billete/monea (int/float)*/ assignment;
 
-read: READ/*Cacha la vola: */ LPAR  ID/*variable*/ RPAR SEMICOLON/* wn*/;
+read: READ/*Cacha la vola: */ PARENTESIS_IZQ  ID/*variable*/ PARENTESIS_DER SEMICOLON/* wn*/;
 
-print: PRINT/*Te voy a decir q: */ LPAR (STRING | operation )* RPAR SEMICOLON/* wn*/;
+print: PRINT/*Te voy a decir q: */ PARENTESIS_IZQ (STRING | operation )* PARENTESIS_DER SEMICOLON/* wn*/;
 
 assignment: ID/*variable*/ ASSIGN/* como */ (operation | STRING | INCREMENT | DECREMENT
 | MINUS_ASSIGN/* robate po */ | PLUS_ASSIGN/* subele con */ | ASSIGN/* como */) SEMICOLON/* wn*/;
