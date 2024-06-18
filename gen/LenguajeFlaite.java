@@ -1,4 +1,4 @@
-// Generated from /Users/kavonkermani/Documents/GitHub/Tarea_1/LenguajeFlaite.g4 by ANTLR 4.13.1
+// Generated from /Users/kavonkermani/Documents/GitHub/Tarea_1/LexerT.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -112,7 +112,7 @@ public class LenguajeFlaite extends Lexer {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "LenguajeFlaite.g4"; }
+	public String getGrammarFileName() { return "LexerT.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

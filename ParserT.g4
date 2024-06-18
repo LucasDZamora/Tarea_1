@@ -1,5 +1,5 @@
-grammar AsaltoEnValpo;
-import LenguajeFlaite;
+grammar ParserT;
+import LexerT;
 
 //Integrantes: Kavon Kermani, Gabriel Sanzana, Lucas Zamora
 
@@ -33,28 +33,26 @@ elif: (ELIF/*ysi*/ condition)*;
 
 else: (ELSE /*Sino*/ else_block)?;
 
-else_block: LEFT_BRACE/*{*/ statement* RIGHT_BRACE/*}*/
+else_block: LEFT_BRACE statement* RIGHT_BRACE
      | statement; // Varios statement o solo uno
 
-condition: LPAR /*(*/ operation RPAR /*)*/ (LEFT_BRACE /*{*/ statement* RIGHT_BRACE/*}*/ | statement); //Condición, varios statement o solo uno
+condition: LPAR operation RPAR (LEFT_BRACE statement* RIGHT_BRACE | statement); //Condición, varios statement o solo uno
 
-for: FOR /*pa*/ LPAR/* ( */ declaration operation SEMICOLON /*wn*/ ID (INCREMENT/* sube uno po*/| DECREMENT/* robate po*/
+for: FOR /*pa*/ LPAR declaration operation SEMICOLON ID (INCREMENT/* sube uno po*/| DECREMENT/* robate po*/
      | MINUS_ASSIGN/* robate po */ | PLUS_ASSIGN/* subele con */ | ASSIGN/* como */ ) operation? RPAR/* ) */
-    (LEFT_BRACE /*{*/ statement* RIGHT_BRACE/*}*/ | statement);
+    (LEFT_BRACE statement* RIGHT_BRACE| statement);
 
 while: WHILE /*mientra q weamo*/ condition;
 
-assignment: ID/*variable*/ ASSIGN/* como */ (operation | STRING | INCREMENT | DECREMENT
-| MINUS_ASSIGN/* robate po */ | PLUS_ASSIGN/* subele con */ | ASSIGN/* como */) SEMICOLON/* wn*/;
-
-declaration: (TIPO/* billete/monea/loh garabatos como (int/float/char)*/ assignment | TIPO/* billete/monea/loh garabatos como (int/float/char)*/ ID /*variable*/ SEMICOLON/* wn*/);
+declaration: (TIPO assignment | TIPO ID SEMICOLON);
 
 const: CONST/*voy a ficharte como eterno loh */ TIPO/* billete/monea (int/float)*/ assignment;
 
-read: READ/*Cacha la vola: */ LPAR/* ( */ ID/*variable*/ RPAR/* ) */ SEMICOLON/* wn*/;
+read: READ/*Cacha la vola: */ LPAR  ID/*variable*/ RPAR SEMICOLON/* wn*/;
 
-print: PRINT/*Te voy a decir q: */ LPAR/* ( */ (STRING | operation )* RPAR/* ) */ SEMICOLON/* wn*/;
+print: PRINT/*Te voy a decir q: */ LPAR (STRING | operation )* RPAR SEMICOLON/* wn*/;
 
-
+assignment: ID/*variable*/ ASSIGN/* como */ (operation | STRING | INCREMENT | DECREMENT
+| MINUS_ASSIGN/* robate po */ | PLUS_ASSIGN/* subele con */ | ASSIGN/* como */) SEMICOLON/* wn*/;
 
 
